@@ -64,16 +64,13 @@ class MainMenuState extends MusicBeatState
 		var spirals:FlxSpriteGroup = new FlxSpriteGroup();
 		add(spirals);
 
-		var spiral1:FlxSprite = new FlxSprite(40);
+		var spiral1:FlxSprite = new FlxSprite(118, 534);
 		spirals.add(spiral1);
 
-		var spiral2:FlxSprite = new FlxSprite(80);
+		var spiral2:FlxSprite = new FlxSprite(119, 134);
 		spirals.add(spiral2);
 
-		var spiral3:FlxSprite = new FlxSprite(50, 250);
-		spiral3.setGraphicSize(spiral3.width * 1.3);
-		spiral3.updateHitbox();
-		spiral3.alpha = 0.5;
+		var spiral3:FlxSprite = new FlxSprite(1114, 588);
 		spirals.add(spiral3);
 
 		spirals.forEach(function(spiral:FlxSprite)
@@ -81,7 +78,6 @@ class MainMenuState extends MusicBeatState
 			for (i in 1...4)
 				spiral.loadGraphic(Paths.image('mainmenu/spiral$i'));
 			spiral.antialiasing = ClientPrefs.data.antialiasing;
-			spiral.scrollFactor.set();
 			spiral.blend = ADD;
 			spiral.angularVelocity = FlxG.random.int(-10, 10);
 		});
